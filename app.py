@@ -91,6 +91,7 @@ if start_button and url_input:
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0")
+    options.binary_location = "/usr/bin/google-chrome"
 
     driver = uc.Chrome(options=options)
     driver.get(formatted_url)
