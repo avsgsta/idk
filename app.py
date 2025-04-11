@@ -6,7 +6,6 @@ import pickle
 import re
 import os
 import gdown
-import undetected_chromedriver as uc
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -84,16 +83,16 @@ if start_button and url_input:
     progress_bar = st.progress(0)
     status_placeholder = st.empty()
 
-    options = uc.ChromeOptions()
+    options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-gpu")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0")
-    
-    # Buat service-nya (jika perlu override, tapi biasanya cukup version_main)
-    driver = uc.Chrome(options=options, version_main=120)
+
+    service = Service()
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(formatted_url)
     time.sleep(3)
 
