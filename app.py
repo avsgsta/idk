@@ -92,8 +92,7 @@ if start_button and url_input:
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0")
 
-    service = Service()
-    driver = uc.Chrome(service=service, options=options)
+    driver = uc.Chrome(options=options)
     driver.get(formatted_url)
     time.sleep(3)
 
