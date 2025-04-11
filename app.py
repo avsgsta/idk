@@ -91,11 +91,9 @@ if start_button and url_input:
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0")
-
-    # Binary location pointing to Chromium
-    options.binary_location = "/usr/bin/chromium"
-
-    driver = uc.Chrome(options=options, browser_executable_path="/usr/bin/chromium")
+    
+    # Buat service-nya (jika perlu override, tapi biasanya cukup version_main)
+    driver = uc.Chrome(options=options, version_main=120)
     driver.get(formatted_url)
     time.sleep(3)
 
