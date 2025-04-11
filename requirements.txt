@@ -9,5 +9,3 @@ webdriver-manager
 plotly
 requests
 lxml
-chromium-chromedriver
-chromium-browser
