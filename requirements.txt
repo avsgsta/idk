@@ -1,0 +1,11 @@
+streamlit
+pandas
+torch
+transformers 
+gdown
+beautifulsoup4
+selenium
+webdriver-manager
+plotly
+requests
+lxml
