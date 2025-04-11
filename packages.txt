@@ -1,4 +1,4 @@
-wget
-unzip
+google-chrome-stable
+
 
 
